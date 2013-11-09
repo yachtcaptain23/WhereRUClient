@@ -208,23 +208,33 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f050007;
+        public static final int action_settings=0x7f05000f;
+        public static final int button1=0x7f05000c;
+        public static final int checkBox1=0x7f050009;
+        public static final int checkBox2=0x7f05000b;
+        public static final int editText1=0x7f050008;
+        public static final int editText2=0x7f05000a;
         public static final int hybrid=0x7f050004;
-        public static final int map=0x7f050005;
+        public static final int imageView1=0x7f050005;
+        public static final int map=0x7f05000d;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int sat=0x7f050006;
+        public static final int sat=0x7f05000e;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
+        public static final int textView1=0x7f050006;
+        public static final int textView2=0x7f050007;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_map=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
+        public static final int map=0x7f0a0001;
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
@@ -324,6 +334,7 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f060013;
         public static final int hello_world=0x7f06001c;
+        public static final int title_activity_map=0x7f06001d;
     }
     public static final class style {
         /** 
