@@ -1,8 +1,13 @@
-package com.example.whereru;
+package entities;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+
+import com.example.whereru.R;
+import com.example.whereru.R.id;
+import com.example.whereru.R.layout;
+import com.example.whereru.R.menu;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
