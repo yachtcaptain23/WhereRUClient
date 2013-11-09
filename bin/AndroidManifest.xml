@@ -10,7 +10,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!--
      The following two permissions are not required to use
-     Google Maps Android API v2, but are recommended.
+     Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -33,7 +33,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="entities.MainActivity"
+            android:name="com.example.whereru.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,8 +47,8 @@
             android:value="AIzaSyBZU6JdWE3l5e_eIswc3yvFyY0MOkeSpow" />
 
         <activity
-            android:name="entities.ContactsDB"
-            android:label="@string/title_activity_contacts_db" >
+            android:name="com.example.whereru.MapActivity"
+            android:label="@string/title_activity_map" >
         </activity>
     </application>
 
