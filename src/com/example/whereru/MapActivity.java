@@ -2,7 +2,10 @@ package com.example.whereru;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -31,6 +34,36 @@ public class MapActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+	
+	
+	public void getContact(View view) {
+		Intent intent = new Intent(this, ContactActivity.class);
+		
+		startActivity(intent);
+	}
+	
+	public void getSetting(View view) {
+		Intent intent = new Intent(this, SettingActivity.class);
+		
+		startActivity(intent);
+	}
+	
+	public void checkIn(View view) {
+		Intent intent = new Intent(this, CheckinActivity.class);
+		// do something here
+		startActivity(intent);
+	}
+	
+	public void message(View view) {
+		Intent intent = new Intent(this, MessageActivity.class);
+		// do something here
+		startActivity(intent);
+	}
+	
+	public void statusSwitch(View view) {
+		// do something here
+		// don't jump to other Activity, switch off the geo location only
 	}
 
 }
