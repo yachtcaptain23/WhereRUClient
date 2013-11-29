@@ -10,7 +10,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!--
      The following two permissions are not required to use
-     Google Maps Android API v2, but are recommended.
+     Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -41,18 +41,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBZU6JdWE3l5e_eIswc3yvFyY0MOkeSpow" />
-
         <activity
             android:name="com.example.whereru.MapActivity"
-            android:label="@string/title_activity_map" >
+            android:label="@string/title_activity_map"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.example.whereru.ContactActivity"
-            android:label="@string/title_activity_contact" >
+            android:label="@string/title_activity_contact"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.example.whereru.SettingsActivity"
@@ -73,6 +70,32 @@
         <activity
             android:name="com.example.whereru.ReadMessageActivity"
             android:label="@string/title_activity_read_message" >
+        </activity>
+        <activity
+            android:name="com.example.whereru.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.example.whereru.CheckinMessageActivity"
+            android:label="@string/title_activity_checkin_message" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDikDTiE-hnbBH1rMQHulwFCeAnoMqGigs" />
+        <!--
+            meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyB4tbxGXeEqDRUXIQQOSFvUS91dPIt6PyQ" />
+        -->
+        <activity
+            android:name="com.example.whereru.NewGroupActivity"
+            android:label="@string/title_activity_new_group" >
+        </activity>
+        <activity
+            android:name="com.example.whereru.NewContactActivity"
+            android:label="@string/title_activity_new_contact" >
         </activity>
     </application>
 

@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="21dp"
         android:layout_marginTop="18dp"
-        android:text="Setting"
+        android:text="@string/setting"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="70dp" />
 
@@ -27,7 +27,7 @@
         android:layout_alignBaseline="@+id/button1"
         android:layout_alignBottom="@+id/button1"
         android:layout_alignParentRight="true"
-        android:text="Off" />
+        android:text="@string/off" />
 
     <Button
         android:id="@+id/button3"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView3"
         android:layout_alignLeft="@+id/button1"
-        android:text="On" />
+        android:text="@string/on" />
 
     <Button
         android:id="@+id/button4"
@@ -44,7 +44,7 @@
         android:layout_alignBaseline="@+id/button3"
         android:layout_alignBottom="@+id/button3"
         android:layout_toRightOf="@+id/button3"
-        android:text="Off" />
+        android:text="@string/off" />
 
     <TextView
         android:id="@+id/textView3"
@@ -53,7 +53,7 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="59dp"
-        android:text="Sound"
+        android:text="@string/sound"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="40dp" />
 
@@ -63,7 +63,7 @@
         android:layout_height="45dp"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignTop="@+id/button1"
-        android:text="Viberate"
+        android:text="@string/viberate"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="40dp" />
 
@@ -74,7 +74,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="102dp"
         android:layout_toLeftOf="@+id/button2"
-        android:text="On" />
+        android:text="@string/on" />
 
     <TextView
         android:id="@+id/textView4"
@@ -83,7 +83,7 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="57dp"
-        android:text="GPS"
+        android:text="@string/gps"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="45dp" />
 
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button3"
         android:layout_alignTop="@+id/textView4"
-        android:text="On" />
+        android:text="@string/on" />
 
     <Button
         android:id="@+id/button6"
@@ -102,7 +102,7 @@
         android:layout_alignBaseline="@+id/button5"
         android:layout_alignBottom="@+id/button5"
         android:layout_alignParentRight="true"
-        android:text="Off" />
+        android:text="@string/off" />
 
     <TextView
         android:id="@+id/textView5"
@@ -111,7 +111,7 @@
         android:layout_alignLeft="@+id/textView4"
         android:layout_below="@+id/textView4"
         android:layout_marginTop="54dp"
-        android:text="WLAN"
+        android:text="@string/wlan"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="45dp" />
 
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button5"
         android:layout_alignTop="@+id/textView5"
-        android:text="On" />
+        android:text="@string/on" />
 
     <Button
         android:id="@+id/button8"
@@ -129,6 +129,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/button7"
         android:layout_alignParentRight="true"
-        android:text="Off" />
+        android:text="@string/off" />
 
 </RelativeLayout>

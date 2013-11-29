@@ -24,7 +24,7 @@
         android:layout_below="@+id/imageView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:text="Trick Rock Star"
+        android:text="@string/sender"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="74dp"
-        android:text="Location: to be implemented"
+        android:text="@string/locinfo"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
         android:layout_centerVertical="true"
-        android:text="Message:"
+        android:text="@string/ms"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -52,6 +52,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:text="Hey yo, guess what&apos;s in my mind" />
+        android:text="@string/text" />
 
 </RelativeLayout>

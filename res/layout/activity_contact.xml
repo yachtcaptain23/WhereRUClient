@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.04"
-        android:text="Contact"
+        android:text="@string/ct"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="90dp" />
 
@@ -33,7 +33,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/imageView1"
         android:layout_toRightOf="@+id/imageView1"
-        android:text="Miranda Kerr" />
+        android:text="@string/contact1" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -52,7 +52,7 @@
         android:layout_alignLeft="@+id/button1"
         android:layout_alignRight="@+id/button1"
         android:layout_alignTop="@+id/imageView2"
-        android:text="Scarlet Johanson" />
+        android:text="@string/contact2" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -70,6 +70,6 @@
         android:layout_alignLeft="@+id/button2"
         android:layout_alignRight="@+id/button2"
         android:layout_alignTop="@+id/imageView3"
-        android:text="Some Guy" />
+        android:text="@string/contact3" />
 
 </RelativeLayout>

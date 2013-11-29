@@ -12,7 +12,7 @@
         android:id="@+id/textView1"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="message"
+        android:text="@string/ms"
         android:textSize="45dp" />
 
     <ImageView
@@ -30,7 +30,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/textView2"
         android:layout_marginRight="38dp"
-        android:text="Read"
+        android:text="@string/read"
         android:onClick="detail" />
 
     <EditText
@@ -43,7 +43,7 @@
         android:layout_toRightOf="@+id/textView1"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Concert Hour Notification: Hi everyone, I&apos;m gonna hold my concert hour..." >
+        android:text="@string/msgcontent" >
 
         <requestFocus />
     </EditText>
@@ -55,7 +55,7 @@
         android:layout_alignBottom="@+id/imageView1"
         android:layout_marginBottom="38dp"
         android:layout_toRightOf="@+id/imageView1"
-        android:text="Trick Rock Star"
+        android:text="@string/sender"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15dp" />
 

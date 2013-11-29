@@ -3,6 +3,7 @@ package com.example.whereru;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
 import android.content.*;
 
 public class CheckinActivity extends Activity {
@@ -20,6 +21,12 @@ public class CheckinActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.checkin, menu);
 		return true;
+	}
+	
+	public void message(View view) {
+		Intent intent = new Intent(this, CheckinMessageActivity.class);
+		
+		startActivity(intent);
 	}
 
 }

@@ -1,69 +1,177 @@
 package com.example.whereru;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import DBLayout.DBHelper;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
-import android.view.View;
-
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
+import android.support.v7.app.ActionBarActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends Activity {
-	static final LatLng MyLocation = new LatLng(40.44141, -79.94378);
+import entities.Contact;
+import entities.Group;
+
+public class MapActivity extends ActionBarActivity {
+	
+	private static final LatLng CMU = new LatLng(40.4429, -79.9425);
+	private LatLng MyLocation;
+	private Marker myLocMarker = null;
     private GoogleMap map;
+    private LocationManager myLocationManager;
+    private ArrayList<Marker> markerList;
+    private ArrayList<LatLng> latlngList;
+    private ArrayList<Contact> contactList;
+    private ArrayList<Group> groupList;
+    private DBHelper dbHelper;
+
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
 		
+		myLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		myLocationListener locationListener = new myLocationListener();
+		
+        dbHelper = new DBHelper(this);
+		
+		myLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 500, 0, locationListener);
+		myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, locationListener);
+		
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-        Marker mylocation = map.addMarker(new MarkerOptions().position(MyLocation).title("Hunt Libray").snippet("Here we are"));
+		map.moveCamera(CameraUpdateFactory.newLatLngZoom(CMU, 16));
+		
+		//showLocations();
+		//myLocMarker = map.addMarker(new MarkerOptions().position(CMU).title("Hunt Libray").snippet("Here we are"));
+	}
+	
+	public class myLocationListener implements LocationListener {
+		
+		public void onLocationChanged(Location location) {
+			
+			double latitude;
+			double longitude;
+			
+			latitude = location.getLatitude();
+			longitude = location.getLongitude();
+			
+			MyLocation = new LatLng(latitude, longitude);
+			String locationInfo = "Latitude = " + latitude + "\nLongitude = " + longitude;
+			
+			if (myLocMarker == null) {
+				myLocMarker = map.addMarker(new MarkerOptions().position(MyLocation).title("My location").snippet(locationInfo));
+			}
+			myLocMarker.setPosition(MyLocation);
+			myLocMarker.setSnippet(locationInfo);
 
-        // Move the camera instantly to NKUT with a zoom of 16.
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(MyLocation, 16));
+	        map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
+	        
+	        showLocations();
+		}
+		
+		public void onProviderDisabled(String provider) {
+			Toast toast = Toast.makeText(getApplicationContext(), "GPS Disabled", Toast.LENGTH_SHORT );
+			toast.show();
+		}
+		
+		public void onProviderEnabled(String provider) {
+			Toast toast = Toast.makeText(getApplicationContext(), "GPS Enabled", Toast.LENGTH_SHORT );
+			toast.show();
+		}
+		
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			
+		}
+	}
+	
+	public void showLocations () {
+		if (markerList == null) {
+			markerList = new ArrayList<Marker>();
+		}
+		if (latlngList == null) {
+			latlngList = new ArrayList<LatLng>();
+		}
+		
+		
+		/*groupList = dbHelper.getAllGroups();
+		
+		Iterator it1 = groupList.iterator();
+		while(it1.hasNext()) {
+			contactList = dbHelper.getContactByGroup(((Group)it1.next()).getGroupName());
+			Iterator it2 = contactList.iterator();
+			while(it2.hasNext()){
+				Contact contact = (Contact)it2.next();
+				//latlngList.add(new LatLng(contact.getLatitude(), contact.getLongitude()));
+				markerList.add(map.addMarker(new MarkerOptions().position(new LatLng(contact.getLatitude(), contact.getLongitude())).title(contact.getName()).snippet(contact.getGroup()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))));
+			}
+		}*/
+		
+		contactList = dbHelper.getAllContacts();
+		Iterator<Contact> it2 = contactList.iterator();
+		while(it2.hasNext()){
+			Contact contact = (Contact)it2.next();
+			//latlngList.add(new LatLng(contact.getLatitude(), contact.getLongitude()));
+			markerList.add(map.addMarker(new MarkerOptions().position(new LatLng(contact.getLatitude(), contact.getLongitude())).title(contact.getName()).snippet(contact.getGroup()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))));
+		}
+		
+		
+		
+		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.map_activity_actions, menu);
+	    return super.onCreateOptionsMenu(menu);
 	}
 	
-	
-	public void getContact(View view) {
-		Intent intent = new Intent(this, ContactActivity.class);
-		
-		startActivity(intent);
-	}
-	
-	public void getSetting(View view) {
-		Intent intent = new Intent(this, SettingActivity.class);
-		
-		startActivity(intent);
-	}
-	
-	public void checkIn(View view) {
-		Intent intent = new Intent(this, CheckinActivity.class);
-		// do something here
-		startActivity(intent);
-	}
-	
-	public void message(View view) {
-		Intent intent = new Intent(this, MessageActivity.class);
-		// do something here
-		startActivity(intent);
-	}
-	
-	public void statusSwitch(View view) {
+	public void statusSwitch() {
 		// do something here
 		// don't jump to other Activity, switch off the geo location only
 	}
-
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	    	case R.id.action_show_or_hide_loc:
+	    		// do something with statusSwitch
+	    		statusSwitch();
+	    		return true;
+	        case R.id.action_settings:
+	        	Intent intentSetting = new Intent(this, SettingActivity.class);
+	        	startActivity(intentSetting);
+	            return true;
+	        case R.id.action_message:
+	        	Intent intentMessage = new Intent(this, MessageActivity.class);
+	        	startActivity(intentMessage);
+	        	return true;
+	        case R.id.action_check_in:
+	        	Intent intentCheckIn = new Intent(this, CheckinActivity.class);
+	        	startActivity(intentCheckIn);
+	        	return true;
+	        case R.id.action_contact:
+	        	Intent intentContact = new Intent(this, ContactActivity.class);
+	        	startActivity(intentContact);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 }
