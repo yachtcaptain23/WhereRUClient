@@ -14,7 +14,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.MenuItemCompat.OnActionExpandListener;
 import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.widget.SearchView;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -24,7 +28,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import entities.Contact;
-import entities.Group;
+//import entities.Group;
 
 public class MapActivity extends ActionBarActivity {
 	
@@ -36,7 +40,7 @@ public class MapActivity extends ActionBarActivity {
     private ArrayList<Marker> markerList;
     private ArrayList<LatLng> latlngList;
     private ArrayList<Contact> contactList;
-    private ArrayList<Group> groupList;
+    //private ArrayList<Group> groupList;
     private DBHelper dbHelper;
 
     
@@ -54,6 +58,8 @@ public class MapActivity extends ActionBarActivity {
 		myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, locationListener);
 		
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		map.setMyLocationEnabled(true);
+		
 		map.moveCamera(CameraUpdateFactory.newLatLngZoom(CMU, 16));
 		
 		//showLocations();
@@ -75,11 +81,12 @@ public class MapActivity extends ActionBarActivity {
 			
 			if (myLocMarker == null) {
 				myLocMarker = map.addMarker(new MarkerOptions().position(MyLocation).title("My location").snippet(locationInfo));
+				map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
 			}
 			myLocMarker.setPosition(MyLocation);
 			myLocMarker.setSnippet(locationInfo);
 
-	        map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
+	        //map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
 	        
 	        showLocations();
 		}
@@ -139,6 +146,21 @@ public class MapActivity extends ActionBarActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.map_activity_actions, menu);
+	    MenuItem searchItem = menu.findItem(R.id.action_search);
+	    //SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+	    MenuItemCompat.setOnActionExpandListener(searchItem, new OnActionExpandListener() {
+	        @Override
+	        public boolean onMenuItemActionCollapse(MenuItem item) {
+	            // Do something when collapsed
+	            return true;  // Return true to collapse action view
+	        }
+
+	        @Override
+	        public boolean onMenuItemActionExpand(MenuItem item) {
+	            // Do something when expanded
+	            return true;  // Return true to expand action view
+	        }
+	    });
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -150,25 +172,33 @@ public class MapActivity extends ActionBarActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
-	    	case R.id.action_show_or_hide_loc:
+	    	case R.id.action_show_loc:
 	    		// do something with statusSwitch
 	    		statusSwitch();
+	    		Toast.makeText(getBaseContext(), "Start sharing your location", Toast.LENGTH_SHORT)
+                .show();
 	    		return true;
-	        case R.id.action_settings:
+	        /*case R.id.action_settings:
 	        	Intent intentSetting = new Intent(this, SettingActivity.class);
 	        	startActivity(intentSetting);
-	            return true;
-	        case R.id.action_message:
+	            return true;*/
+	        /*case R.id.action_message:
 	        	Intent intentMessage = new Intent(this, MessageActivity.class);
 	        	startActivity(intentMessage);
-	        	return true;
-	        case R.id.action_check_in:
-	        	Intent intentCheckIn = new Intent(this, CheckinActivity.class);
-	        	startActivity(intentCheckIn);
+	        	return true;*/
+	        case R.id.action_hide_loc:
+	        	/*Intent intentCheckIn = new Intent(this, CheckinActivity.class);
+	        	startActivity(intentCheckIn);*/
+	        	Toast.makeText(getBaseContext(), "Your location is invisible now", Toast.LENGTH_SHORT)
+                .show();
 	        	return true;
 	        case R.id.action_contact:
 	        	Intent intentContact = new Intent(this, ContactActivity.class);
 	        	startActivity(intentContact);
+	        	return true;
+	        case R.id.action_refresh:
+	        	Toast.makeText(getBaseContext(), "Data updated", Toast.LENGTH_SHORT)
+                .show();
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);

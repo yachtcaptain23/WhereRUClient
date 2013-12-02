@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper{
 	// Database Version
-	protected static final int DATABASE_VERSION = 1;
+	protected static final int DATABASE_VERSION = 2;
     // Database Name
 	protected  static final String DATABASE_NAME = "WhereRU_db";
     
@@ -28,14 +28,21 @@ public class DBHelper extends SQLiteOpenHelper{
     protected static final String GROUP_TABLE_NAME = "groups";
     protected static final String COLUMN_GROUPNAME = "groupname";
     
+    protected static final String MYSELF_TABLE_NAME = "myself";
+    
     // Constructor
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
-	
-    @Override
+
+	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("CREATE TABLE " + CONTACT_TABLE_NAME + "( "  
+		        + COLUMN_NAME + " TEXT, " + COLUMN_GROUP + " TEXT, "
+		        + COLUMN_LATITUDE + " REAL, " + COLUMN_LONGITUDE + " REAL, "
+		        + COLUMN_MESSAGE + " TEXT, " + COLUMN_SHARE + " BOOLEAN)");
+		
+		db.execSQL("CREATE TABLE " + MYSELF_TABLE_NAME + "( "  
 		        + COLUMN_NAME + " TEXT, " + COLUMN_GROUP + " TEXT, "
 		        + COLUMN_LATITUDE + " REAL, " + COLUMN_LONGITUDE + " REAL, "
 		        + COLUMN_MESSAGE + " TEXT, " + COLUMN_SHARE + " BOOLEAN)");
@@ -49,6 +56,7 @@ public class DBHelper extends SQLiteOpenHelper{
 		// TODO Auto-generated method stub
 		db.execSQL("DROP TABLE IF EXISTS " + CONTACT_TABLE_NAME);
 		db.execSQL("DROP TABLE IF EXISTS " + GROUP_TABLE_NAME);
+		db.execSQL("DROP TABLE IF EXISTS " + MYSELF_TABLE_NAME);
 		onCreate(db);
 	}
 	
@@ -60,36 +68,115 @@ public class DBHelper extends SQLiteOpenHelper{
 		 */
 		
 		SQLiteDatabase db = this.getWritableDatabase();
+		
     	ContentValues values = new ContentValues();
     	
 		values.put(DBHelper.COLUMN_NAME, name);
 		values.put(DBHelper.COLUMN_GROUP, group);
+		
+		/* Comment the following 3 lines if you want to hard code some contact info */
 		values.putNull(DBHelper.COLUMN_LATITUDE);
 		values.putNull(DBHelper.COLUMN_LONGITUDE);
 		values.putNull(DBHelper.COLUMN_MESSAGE);
+		/* If you want to hard code some contacts for test, uncomment the following */
+		//values.put(DBHelper.COLUMN_LATITUDE, 40.44606);
+		//values.put(DBHelper.COLUMN_LONGITUDE, -79.94803);
+		//values.put(DBHelper.COLUMN_MESSAGE, "Stuying data structure");
 		values.put(DBHelper.COLUMN_SHARE, true);
 		
 		db.insert(DBHelper.CONTACT_TABLE_NAME, null, values);
 		db.close();
 	}
 	
-	public void readContact(int id){
-		/* 
-		 * Read information of a contact entry from database
-		 */
+	/**
+	 * Returns a the myself row
+	 * @return MYSELF row
+	 */
+	public String readMyself(){
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor c = db.rawQuery("SELECT * FROM MYSELF", null); // Returns a cursor on a table
+		if(!c.moveToFirst())
+			System.out.println("Apparently the set is empty??");
+		String s = c.getString(0); // Might be off by one
+		s = s + "," +  c.getString(1);
+		s = s + "," +  c.getString(2);
+		s = s + "," +  c.getString(3);
+		s = s + "," +  c.getString(4);
+		s = s + "," +  c.getString(5);
+		db.close();
+		return s;
 	}
 	
-	public void updateContact(int id, String first_name, String last_name, 
-			double Latitude, double Longitude){
-		/* 
-		 * Update information of a contact entry in database
-		 */
+	/**
+	 * Gets the group from current
+	 * @return MYSELF row
+	 */
+	public String readMyselfGroup(){
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor c = db.rawQuery("SELECT * FROM MYSELF", null); // Returns a cursor on a table
+		if(!c.moveToFirst())
+			System.out.println("Apparently the set is empty??");
+		db.close();
+		return c.getString(1);
 	}
 	
-	public void deleteContact(int id){
-		/* 
-		 * Delete a contact entry in database
-		 */
+	/**
+	 * Instantiates current MYSELF table
+	 * @return
+	 */
+	public void instantiateMyself(String name){
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL("delete from MYSELF;"); //clears the table
+    	db.execSQL("INSERT INTO MYSELF VALUES(\"" + name + "\",\"\",0,0,\"\",1);");
+    	db.close();
+	}
+	
+	public void setMyselfGroup(String name){
+		SQLiteDatabase db = this.getWritableDatabase();
+    	db.execSQL("UPDATE MYSELF SET groupname = \"" + name + "\";");
+    	db.close();
+	}
+	
+	/**
+	 * Updates the location of the MYSELF table
+	 * @param Latitude contains the latitude
+	 * @param Longitude contains the longitude
+	 */
+	public void updateMyselfLocation(double Latitude, double Longitude){
+		SQLiteDatabase db = this.getWritableDatabase();
+    	ContentValues values = new ContentValues();
+    	values.put(COLUMN_LATITUDE, Latitude);
+    	values.put(COLUMN_LONGITUDE, Longitude);
+    	db.close();
+	}
+	
+	/**
+	 * Updates the message of the MYSELF table
+	 * @param message
+	 */
+	public void updateMyselfMessage(String message){
+		SQLiteDatabase db = this.getWritableDatabase();
+    	ContentValues values = new ContentValues();
+    	values.put(COLUMN_MESSAGE, message);
+    	db.close();
+	}
+	
+	public void insertContact(String name, String groupname, 
+			double Latitude, double Longitude, String message, int share){
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL("delete from CONTACT where NAME="+"\"" + name + "\";");
+		db.execSQL("INSERT INTO CONTACT VALUES(\"" + name 
+				+ "\",\"" + groupname + "\","
+				+ Latitude + "," + Longitude
+				+ ",\"" + message + "\","
+				+ share + ");");
+		db.close();
+	}
+	
+	public void deleteContact(String name){
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL("delete from MYSELF where name=\""+name+"\";");
+		db.close();
 	}
 	
 	public void createGroup(String group_name){
@@ -183,4 +270,5 @@ public class DBHelper extends SQLiteOpenHelper{
 			return true;
 		else return false;
 	}
+	
 }

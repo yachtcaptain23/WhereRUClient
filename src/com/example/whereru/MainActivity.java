@@ -7,6 +7,7 @@ import android.view.*;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.content.*;
+import android.graphics.Typeface;
 
 public class MainActivity extends Activity {
 
@@ -18,6 +19,8 @@ public class MainActivity extends Activity {
 		ActionBar actionBar = getActionBar();
 		actionBar.hide();
 		image1.requestFocus();
+		EditText password = (EditText) findViewById( R.id.editText2);
+		password.setTypeface( Typeface.DEFAULT );
 	}
 
 	@Override
@@ -30,7 +33,7 @@ public class MainActivity extends Activity {
 	public void logIn(View view) {
 		Intent intent = new Intent(this, MapActivity.class);
 		
-		EditText account = (EditText) findViewById(R.id.editText1);
+		/*EditText account = (EditText) findViewById(R.id.editText1);
 		EditText password = (EditText) findViewById(R.id.editText2);
 		String accountStr = account.getText().toString();
 		String passwordStr = password.getText().toString();

@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:whereru="http://schemas.android.com/apk/res-auto" >
+
+      <item android:id="@+id/action_contactview"
+            android:title="@string/contactview"
+            whereru:showAsAction="always" />
+
+</menu>

@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/editText2"
         android:layout_centerVertical="true"
-        android:text="@string/add_contact" />
+        android:text="@string/add_contact"
+        android:onClick="addContact" />
 
 </RelativeLayout>

@@ -4,13 +4,19 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!--
      The following two permissions are not required to use
-     Google Maps Android API v2, but are recommended.
+     Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -34,7 +40,8 @@
 
         <activity
             android:name="com.example.whereru.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,12 +50,14 @@
         </activity>
         <activity
             android:name="com.example.whereru.MapActivity"
+            android:configChanges="keyboardHidden|orientation"
             android:label="@string/title_activity_map"
             android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.example.whereru.ContactActivity"
             android:label="@string/title_activity_contact"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
@@ -74,11 +83,13 @@
         <activity
             android:name="com.example.whereru.SignUpActivity"
             android:label="@string/title_activity_sign_up"
+            android:theme="@style/Theme.AppCompat.Light"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
             android:name="com.example.whereru.CheckinMessageActivity"
-            android:label="@string/title_activity_checkin_message" >
+            android:label="@string/title_activity_checkin_message"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
 
         <meta-data
@@ -87,15 +98,25 @@
         <!--
             meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyB4tbxGXeEqDRUXIQQOSFvUS91dPIt6PyQ" />
+            android:value="AIzaSyB4tbxGXeEqDRUXIQQOSFvUS91dPIt6PyQ" />
         -->
         <activity
             android:name="com.example.whereru.NewGroupActivity"
-            android:label="@string/title_activity_new_group" >
+            android:label="@string/title_activity_new_group"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name="com.example.whereru.NewContactActivity"
-            android:label="@string/title_activity_new_contact" >
+            android:label="@string/title_activity_new_contact"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name="com.example.whereru.GroupActivity"
+            android:label="@string/title_activity_group"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
     </application>
 

@@ -2,11 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:whereru="http://schemas.android.com/apk/res-auto" >
       <item android:id="@+id/action_groupview"
-            android:title="create new group"
+            android:title="@string/groupview"
+            whereru:showAsAction="always" />
+      <item android:id="@+id/action_add_new_group"
+            android:icon="@drawable/ic_action_add_group"
+            android:title="@string/create_new_group"
             whereru:showAsAction="always" />
       <item android:id="@+id/action_add_new_contact"
-            android:title="create new contact"
+            android:icon="@drawable/ic_action_add_person"
+            android:title="@string/create_new_contact"
             whereru:showAsAction="always" />
+      
       <!-- android:icon="@drawable/ic_action_add_group_new" -->
 
 </menu>

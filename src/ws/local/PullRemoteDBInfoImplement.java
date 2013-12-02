@@ -1,18 +1,18 @@
 package ws.local;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.util.Scanner;
+//import java.net.UnknownHostException;
+//import java.util.Scanner;
 
 public class PullRemoteDBInfoImplement implements PullRemoteDBInfo{
     
 	private Socket _clientSocket = null;
-    private Scanner in = null;
-    private PrintWriter out = null;
-    private Scanner stdIn = null;
-    private Thread t3 = null;
+    //private Scanner in = null;
+    //private PrintWriter out = null;
+    //private Scanner stdIn = null;
+    //private Thread t3 = null;
     private String SERVER_URL = "192.168.1.120";
     private int SERVER_PORT = 4441; // Needs to be changed
     

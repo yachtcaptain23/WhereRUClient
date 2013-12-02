@@ -16,7 +16,8 @@
         android:layout_below="@+id/editText1"
         android:layout_marginRight="28dp"
         android:layout_marginTop="124dp"
-        android:text="Send" />
+        android:text="@string/send"
+        android:onClick="sendMessage" />
 
     <EditText
         android:id="@+id/editText1"

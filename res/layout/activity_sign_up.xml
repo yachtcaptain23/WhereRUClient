@@ -44,7 +44,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="account name"
+                android:hint="@string/hint_account_name"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" />
@@ -69,7 +69,7 @@
                 android:layout_marginTop="16dp"
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
-                android:text="sign up" />
+                android:text="@string/sign_up" />
         </LinearLayout>
     </ScrollView>
 
