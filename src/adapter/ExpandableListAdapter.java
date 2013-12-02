@@ -14,6 +14,7 @@ import android.content.Context;
 //import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
 //import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     private Activity context;
     private Map<String, List<Contact>> contactsCollections;
     private List<String> contacts;
+    private TextView item;
+    private TextView middleitem;
+    private ImageView delete;
  
     public ExpandableListAdapter(Activity context, List<String> contacts,
             Map<String, List<Contact>> contactCollection) {
@@ -54,11 +58,11 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = inflater.inflate(R.layout.child_item, null);
         }
  
-        TextView item = (TextView) convertView.findViewById(R.id.contact);
+        item = (TextView) convertView.findViewById(R.id.contact);
         
-        TextView middleitem = (TextView) convertView.findViewById(R.id.message);
+        middleitem = (TextView) convertView.findViewById(R.id.message);
  
-        ImageView delete = (ImageView) convertView.findViewById(R.id.delete);
+        delete = (ImageView) convertView.findViewById(R.id.delete);
         delete.setOnClickListener(new OnClickListener() {
  
             public void onClick(View v) {
@@ -83,7 +87,17 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                         });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();*/
+            	double mylatitude = 0;
+            	double mylongitude = 0;
+            	Bundle extras = context.getIntent().getExtras();
+        		if (extras != null) {
+        			mylatitude = extras.getDouble("mylatitude");
+        			mylongitude = extras.getDouble("mylongitude");
+        		}
             	Intent intent = new Intent(context, CheckinMessageActivity.class);
+            	intent.putExtra("mylatitude", mylatitude);
+            	intent.putExtra("mylongitude", mylongitude);
+            	intent.putExtra("receiver", item.getText());
         		context.startActivity(intent);
             }
         });

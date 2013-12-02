@@ -3,6 +3,8 @@ package com.example.whereru;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import ws.local.ClientToServerComm;
+
 import DBLayout.DBHelper;
 import android.location.Location;
 import android.location.LocationListener;
@@ -140,6 +142,20 @@ public class MapActivity extends ActionBarActivity {
 		
 		
 	}
+	
+	public void PullAllContacts(){
+		ClientToServerComm c = ClientToServerComm.getInstance(this); 
+		Thread t = new Thread(c); 
+		t.start(); 
+		try { t.sleep(3000); } 
+		catch (InterruptedException e) 
+		{ // TODO Auto-generated catch block 
+			e.printStackTrace(); 
+		} 
+
+			c.pullAll();
+			c.terminate();
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -194,9 +210,12 @@ public class MapActivity extends ActionBarActivity {
 	        	return true;
 	        case R.id.action_contact:
 	        	Intent intentContact = new Intent(this, ContactActivity.class);
+	        	intentContact.putExtra("mylatitude", MyLocation.latitude);
+	        	intentContact.putExtra("mylongitude", MyLocation.longitude);
 	        	startActivity(intentContact);
 	        	return true;
 	        case R.id.action_refresh:
+	        	PullAllContacts();
 	        	Toast.makeText(getBaseContext(), "Data updated", Toast.LENGTH_SHORT)
                 .show();
 	        	return true;

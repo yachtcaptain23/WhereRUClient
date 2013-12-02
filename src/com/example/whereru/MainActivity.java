@@ -1,5 +1,6 @@
 package com.example.whereru;
 
+import DBLayout.DBHelper;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -10,6 +11,8 @@ import android.content.*;
 import android.graphics.Typeface;
 
 public class MainActivity extends Activity {
+	
+	DBHelper dbHelper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,8 @@ public class MainActivity extends Activity {
 		image1.requestFocus();
 		EditText password = (EditText) findViewById( R.id.editText2);
 		password.setTypeface( Typeface.DEFAULT );
+		
+		dbHelper = new DBHelper(this);
 	}
 
 	@Override
@@ -33,11 +38,12 @@ public class MainActivity extends Activity {
 	public void logIn(View view) {
 		Intent intent = new Intent(this, MapActivity.class);
 		
-		/*EditText account = (EditText) findViewById(R.id.editText1);
+		EditText account = (EditText) findViewById(R.id.editText1);
 		EditText password = (EditText) findViewById(R.id.editText2);
 		String accountStr = account.getText().toString();
 		String passwordStr = password.getText().toString();
 		
+		dbHelper.instantiateMyself(accountStr);
 		
 		// use this accountStr and passwordStr to verify login compare these
 		// two with the saved account information if the account string matches

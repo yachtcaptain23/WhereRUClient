@@ -38,8 +38,8 @@ public class MyListAdapter extends ArrayAdapter<String>{
         	 
             public void onClick(View v) {
 
-            	Intent intent = new Intent(context, CheckinMessageActivity.class);
-        		context.startActivity(intent);
+            	//Intent intent = new Intent(context, CheckinMessageActivity.class);
+        		//context.startActivity(intent);
             }
         });
 		textView.setText((String)values.get(position));

@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper{
 	// Database Version
-	protected static final int DATABASE_VERSION = 2;
+	protected static final int DATABASE_VERSION = 3;
     // Database Name
 	protected  static final String DATABASE_NAME = "WhereRU_db";
     
@@ -145,8 +145,10 @@ public class DBHelper extends SQLiteOpenHelper{
 	public void updateMyselfLocation(double Latitude, double Longitude){
 		SQLiteDatabase db = this.getWritableDatabase();
     	ContentValues values = new ContentValues();
+    	System.out.println("Writing " + Latitude + " " + Longitude);
     	values.put(COLUMN_LATITUDE, Latitude);
     	values.put(COLUMN_LONGITUDE, Longitude);
+    	db.update(MYSELF_TABLE_NAME, values, null, null);
     	db.close();
 	}
 	

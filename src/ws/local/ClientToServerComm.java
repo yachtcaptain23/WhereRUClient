@@ -18,7 +18,7 @@ public class ClientToServerComm implements Runnable{
     private Scanner in = null;
     private PrintWriter out = null;
     private String SERVER_URL = "128.237.123.59";
-    private int SERVER_PORT = 4444;
+    private int SERVER_PORT = 4445;
     public volatile String _command;
     private volatile boolean running;
     private volatile boolean pull_request;
