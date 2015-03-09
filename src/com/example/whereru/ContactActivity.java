@@ -6,7 +6,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.google.android.gms.maps.model.LatLng;
 
 import entities.Contact;
 import entities.Group;
@@ -24,6 +23,11 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 import android.content.*;
 
+/**
+ * ContactActivity handles viewing of all contacts
+ * @author albertw
+ *
+ */
 public class ContactActivity extends ActionBarActivity {
 	
 	private List<String> groupNameList;
@@ -41,20 +45,14 @@ public class ContactActivity extends ActionBarActivity {
 		
 		dbHelper = new DBHelper(this);
 		
-		
-		
 		createGroupList();
-		//System.out.println("1");
-		 
         createCollection();
-        //System.out.println("2");
  
         expListView = (ExpandableListView) findViewById(R.id.contact_list);
         final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
                 this, groupNameList, contactCollection);
         expListView.setAdapter(expListAdapter);
- 
-        //setGroupIndicatorToRight();
+
  
         expListView.setOnChildClickListener(new OnChildClickListener() {
  
@@ -72,9 +70,10 @@ public class ContactActivity extends ActionBarActivity {
         });
 	}
 
+	/**
+	 * Creates a view off the contacts
+	 */
 	private void createCollection() {
-		// TODO Auto-generated method stub
-		
 		
 		Iterator<String> it1 = groupNameList.iterator();
 		contactCollection = new LinkedHashMap<String, List<Contact>>();
@@ -93,17 +92,17 @@ public class ContactActivity extends ActionBarActivity {
 		}
 	}
 
+	/**
+	 * Generates a list containing the groups
+	 */
 	private void createGroupList() {
-		// TODO Auto-generated method stub
+		
 		groupNameList = new ArrayList<String>();
-		//childList = new ArrayList<String>();
 	    groupList = dbHelper.getAllGroups();
-	    //System.out.println("1");
 	    
 	    Iterator<Group> it1 = groupList.iterator();
-	    //System.out.println("2");
+	    
 		while(it1.hasNext()){
-			//String groupName = it1.next().getGroupName();
 			groupNameList.add(it1.next().getGroupName());
 			
 		}
@@ -120,22 +119,24 @@ public class ContactActivity extends ActionBarActivity {
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
-	    switch (item.getItemId()) {
-	        case R.id.action_add_new_group:
-	        	Intent intentGroup = new Intent(this, NewGroupActivity.class);
-	    		startActivity(intentGroup);
-	            return true;
-	        case R.id.action_add_new_contact:
-	        	Intent intentContact = new Intent(this, NewContactActivity.class);
-	    		startActivity(intentContact);
-	        	return true;
-	        case R.id.action_groupview:
-	        	Intent intentGroupview = new Intent(this, GroupActivity.class);
-	    		startActivity(intentGroupview);
-	        	return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
+		if(item.getItemId() == R.id.action_add_new_group){
+        	Intent intentGroup = new Intent(this, NewGroupActivity.class);
+    		startActivity(intentGroup);
+            return true;
+		}
+		else if(item.getItemId() == R.id.action_add_new_contact){
+        	Intent intentContact = new Intent(this, NewContactActivity.class);
+    		startActivity(intentContact);
+        	return true;
+		}
+		else if(item.getItemId() == R.id.action_groupview){
+        	Intent intentGroupview = new Intent(this, GroupActivity.class);
+    		startActivity(intentGroupview);
+        	return true;
+		}
+		else{
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 }

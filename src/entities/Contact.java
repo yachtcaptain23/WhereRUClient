@@ -1,5 +1,11 @@
 package entities;
 
+/**
+ * Contact object
+ * Has modifiable values of name, groupname, latitude, longitude, message, and boolean share
+ * @author albertw
+ *
+ */
 public class Contact {
 	
 	private String name;

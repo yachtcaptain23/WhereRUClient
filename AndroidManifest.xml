@@ -16,7 +16,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!--
      The following two permissions are not required to use
-     Google Maps Android API v2, but are recommended.
+     Google Maps Android API v2, but are recommended.
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -94,11 +94,11 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDikDTiE-hnbBH1rMQHulwFCeAnoMqGigs" />
+            android:value="AIzaSyAf6-l7bfiMJIc2hJfXowbckjUYWuQ6jYQ" />
         <!--
             meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyB4tbxGXeEqDRUXIQQOSFvUS91dPIt6PyQ" />
+            android:value="AIzaSyB4tbxGXeEqDRUXIQQOSFvUS91dPIt6PyQ" />
         -->
         <activity
             android:name="com.example.whereru.NewGroupActivity"
@@ -117,6 +117,14 @@
             android:label="@string/title_activity_group"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name="com.example.whereru.SignupActivity"
+            android:label="@string/title_activity_signup" >
+        </activity>
+        <activity
+            android:name="com.example.whereru.GroupMessageActivity"
+            android:label="@string/title_activity_group_message" >
         </activity>
     </application>
 

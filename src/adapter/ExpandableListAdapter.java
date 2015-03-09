@@ -87,7 +87,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                         });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();*/
-            	double mylatitude = 0;
+            	/*double mylatitude = 0;
             	double mylongitude = 0;
             	Bundle extras = context.getIntent().getExtras();
         		if (extras != null) {
@@ -98,7 +98,12 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             	intent.putExtra("mylatitude", mylatitude);
             	intent.putExtra("mylongitude", mylongitude);
             	intent.putExtra("receiver", item.getText());
-        		context.startActivity(intent);
+        		context.startActivity(intent);*/
+            	Intent intent = new Intent(context, CheckinMessageActivity.class);
+            	intent.putExtra("receiver", item.getText());
+            	context.startActivity(intent);
+            	//item.getText();
+            	
             }
         });
  

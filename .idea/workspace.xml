@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="93f41845-2245-41e5-be86-8ff4f936ca9f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/com/google/android/gms/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/activity_sign_up.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/example/whereru/SignupActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/SignupActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/example/whereru/R$drawable.class" afterPath="$PROJECT_DIR$/bin/classes/com/example/whereru/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/google/android/gms/R$drawable.class" afterPath="$PROJECT_DIR$/bin/classes/com/google/android/gms/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/example/whereru/R$id.class" afterPath="$PROJECT_DIR$/bin/classes/com/example/whereru/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/example/whereru/R$integer.class" afterPath="$PROJECT_DIR$/bin/classes/com/example/whereru/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-hdpi/Thumbs.db" afterPath="$PROJECT_DIR$/res/drawable-hdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/WhereRU.apk" afterPath="$PROJECT_DIR$/bin/WhereRU.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dexedLibs/android-support-v7-appcompat-ebf5d83bf7951790a5ab3086d87c1304.jar" afterPath="$PROJECT_DIR$/bin/dexedLibs/android-support-v7-appcompat-ebf5d83bf7951790a5ab3086d87c1304.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="$PROJECT_DIR$/bin/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dexedLibs/google-play-services_lib-2b8919bc7368b898e60f4b6143a8cfa9.jar" afterPath="$PROJECT_DIR$/bin/dexedLibs/google-play-services_lib-2b8919bc7368b898e60f4b6143a8cfa9.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="$PROJECT_DIR$/bin/resources.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/AndroidManifest.xml" afterPath="$PROJECT_DIR$/bin/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/example/whereru/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/example/whereru/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/whereru/CheckinMessageActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/CheckinMessageActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/local/ClientToServerComm.java" afterPath="$PROJECT_DIR$/src/ws/local/ClientToServerComm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Contact.java" afterPath="$PROJECT_DIR$/src/entities/Contact.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/whereru/ContactActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/ContactActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/ContactsInterface.java" afterPath="$PROJECT_DIR$/src/entities/ContactsInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DBLayout/DBHelper.java" afterPath="$PROJECT_DIR$/src/DBLayout/DBHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adapter/ExpandableListAdapter.java" afterPath="$PROJECT_DIR$/src/adapter/ExpandableListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Group.java" afterPath="$PROJECT_DIR$/src/entities/Group.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/whereru/GroupActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/GroupActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/GroupsInterface.java" afterPath="$PROJECT_DIR$/src/entities/GroupsInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/whereru/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/whereru/MapActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/MapActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/Message.java" afterPath="$PROJECT_DIR$/src/entities/Message.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/MessagesInterface.java" afterPath="$PROJECT_DIR$/src/entities/MessagesInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adapter/MyListAdapter.java" afterPath="$PROJECT_DIR$/src/adapter/MyListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/whereru/NewContactActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/NewContactActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/whereru/NewGroupActivity.java" afterPath="$PROJECT_DIR$/src/com/example/whereru/NewGroupActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/local/PullRemoteDBInfo.java" afterPath="$PROJECT_DIR$/src/ws/local/PullRemoteDBInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/remote/PullRemoteDBInfo.java" afterPath="$PROJECT_DIR$/src/ws/remote/PullRemoteDBInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/local/PullRemoteDBInfoImplement.java" afterPath="$PROJECT_DIR$/src/ws/local/PullRemoteDBInfoImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/local/PushLocalDBInfo.java" afterPath="$PROJECT_DIR$/src/ws/local/PushLocalDBInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ws/remote/PushLocalDBInfo.java" afterPath="$PROJECT_DIR$/src/ws/remote/PushLocalDBInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/example/whereru/R.java" afterPath="$PROJECT_DIR$/gen/com/example/whereru/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/R.txt" afterPath="$PROJECT_DIR$/bin/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_checkin_message.xml" afterPath="$PROJECT_DIR$/res/layout/activity_checkin_message.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_contact.xml" afterPath="$PROJECT_DIR$/res/layout/activity_contact.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_group.xml" afterPath="$PROJECT_DIR$/res/layout/activity_group.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_map.xml" afterPath="$PROJECT_DIR$/res/layout/activity_map.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_new_contact.xml" afterPath="$PROJECT_DIR$/res/layout/activity_new_contact.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_new_group.xml" afterPath="$PROJECT_DIR$/res/layout/activity_new_group.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_read_message.xml" afterPath="$PROJECT_DIR$/res/layout/activity_read_message.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_setting.xml" afterPath="$PROJECT_DIR$/res/layout/activity_setting.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/checkin.xml" afterPath="$PROJECT_DIR$/res/menu/checkin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/checkin_message.xml" afterPath="$PROJECT_DIR$/res/menu/checkin_message.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/child_item.xml" afterPath="$PROJECT_DIR$/res/layout/child_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/contact.xml" afterPath="$PROJECT_DIR$/res/menu/contact.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/contact_activity_actions.xml" afterPath="$PROJECT_DIR$/res/menu/contact_activity_actions.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/contacts.xml" afterPath="$PROJECT_DIR$/res/menu/contacts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/contacts_db.xml" afterPath="$PROJECT_DIR$/res/menu/contacts_db.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/dimens.xml" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values-sw600dp/dimens.xml" afterPath="$PROJECT_DIR$/res/values-sw600dp/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values-sw720dp-land/dimens.xml" afterPath="$PROJECT_DIR$/res/values-sw720dp-land/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/group.xml" afterPath="$PROJECT_DIR$/res/menu/group.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/group_item.xml" afterPath="$PROJECT_DIR$/res/layout/group_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/groupview_item.xml" afterPath="$PROJECT_DIR$/res/layout/groupview_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/jarlist.cache" afterPath="$PROJECT_DIR$/bin/jarlist.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="$PROJECT_DIR$/res/menu/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/map.xml" afterPath="$PROJECT_DIR$/res/menu/map.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/map_activity_actions.xml" afterPath="$PROJECT_DIR$/res/menu/map_activity_actions.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/message.xml" afterPath="$PROJECT_DIR$/res/menu/message.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/new_contact.xml" afterPath="$PROJECT_DIR$/res/menu/new_contact.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/new_group.xml" afterPath="$PROJECT_DIR$/res/menu/new_group.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/pref_data_sync.xml" afterPath="$PROJECT_DIR$/res/xml/pref_data_sync.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/pref_general.xml" afterPath="$PROJECT_DIR$/res/xml/pref_general.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/pref_headers.xml" afterPath="$PROJECT_DIR$/res/xml/pref_headers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/pref_notification.xml" afterPath="$PROJECT_DIR$/res/xml/pref_notification.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/read_message.xml" afterPath="$PROJECT_DIR$/res/menu/read_message.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/setting.xml" afterPath="$PROJECT_DIR$/res/menu/setting.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/sign_up.xml" afterPath="$PROJECT_DIR$/res/menu/sign_up.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings_activity_settings.xml" afterPath="$PROJECT_DIR$/res/values/strings_activity_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings_activity_sign_up.xml" afterPath="$PROJECT_DIR$/res/values/strings_activity_sign_up.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values-large/styles.xml" afterPath="$PROJECT_DIR$/res/values-large/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values-v11/styles.xml" afterPath="$PROJECT_DIR$/res/values-v11/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values-v14/styles.xml" afterPath="$PROJECT_DIR$/res/values-v14/styles.xml" />
+    </list>
+    <ignored path="WhereRU.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="WhereRU" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="20" />
+    <option name="y" value="22" />
+    <option name="width" value="1400" />
+    <option name="height" value="804" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="remote" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhereRU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RunManager" selected="Android Application.WhereRU">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="false" name="WhereRU" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="WhereRU" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Android Application.WhereRU" />
+    </list>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93f41845-2245-41e5-be86-8ff4f936ca9f" name="Default" comment="" />
+      <created>1386528173894</created>
+      <updated>1386528173894</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="20" y="22" width="1400" height="804" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32863188" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+</project>
+

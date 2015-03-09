@@ -14,6 +14,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+/**
+ * Handles processing of the group view
+ * @author albertw
+ *
+ */
 public class GroupActivity extends ListActivity {
 	
 	private List<String> groupNameList;
@@ -49,22 +54,14 @@ public class GroupActivity extends ListActivity {
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
-	    switch (item.getItemId()) {
-	        case R.id.action_contactview:
-	        	Intent intentContactview = new Intent(this, ContactActivity.class);
-	    		startActivity(intentContactview);
-	            return true;
-	        /*case R.id.action_add_new_contact:
-	        	Intent intentContact = new Intent(this, NewContactActivity.class);
-	    		startActivity(intentContact);
-	        	return true;
-	        case R.id.action_groupview:
-	        	Intent intentGroupview = new Intent(this, GroupActivity.class);
-	    		startActivity(intentGroupview);
-	        	return true;*/
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
+		if (item.getItemId() == R.id.action_contactview){
+        	Intent intentContactview = new Intent(this, ContactActivity.class);
+    		startActivity(intentContactview);
+            return true;
+		}
+		else{
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 }

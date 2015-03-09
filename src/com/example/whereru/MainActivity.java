@@ -7,9 +7,15 @@ import android.app.Activity;
 import android.view.*;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.content.*;
 import android.graphics.Typeface;
 
+/**
+ * Main login page. User must sign up before logging in
+ * @author albertw
+ *
+ */
 public class MainActivity extends Activity {
 	
 	DBHelper dbHelper;
@@ -35,6 +41,10 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	/**
+	 * Attempts to login
+	 * @param view
+	 */
 	public void logIn(View view) {
 		Intent intent = new Intent(this, MapActivity.class);
 		
@@ -42,8 +52,7 @@ public class MainActivity extends Activity {
 		EditText password = (EditText) findViewById(R.id.editText2);
 		String accountStr = account.getText().toString();
 		String passwordStr = password.getText().toString();
-		
-		dbHelper.instantiateMyself(accountStr);
+
 		
 		// use this accountStr and passwordStr to verify login compare these
 		// two with the saved account information if the account string matches
@@ -51,19 +60,23 @@ public class MainActivity extends Activity {
 		// startActivity(intent) else display a toast message indicating error
 		
 		/* it should be something like this:
-		  get saved account information
-		  if (accountStr.equals(<saved account name>) 
-		  			&& passwordStr.equals(<saved password for this account>)) {
+		  get saved account information*/
+		
+		if (passwordStr.equals(dbHelper.getPassword(accountStr))) {
 			startActivity(intent);
 		}
 		else {
-			// create a new toast message and show it
-		}*/
-		startActivity(intent);
+			Toast.makeText(getBaseContext(), "Password is incorrect", Toast.LENGTH_SHORT).show();
+			return;
+		}
 	}
 	
+	/**
+	 * Opens up the intent to SignUp
+	 * @param view current view
+	 */
 	public void signUp(View view) {
-		Intent intent = new Intent(this, SignUpActivity.class);
+		Intent intent = new Intent(this, SignupActivity.class);
 		startActivity(intent);
 	}
 

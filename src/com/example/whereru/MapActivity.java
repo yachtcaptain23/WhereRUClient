@@ -19,7 +19,6 @@ import android.widget.Toast;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.MenuItemCompat.OnActionExpandListener;
 import android.support.v7.app.ActionBarActivity;
-//import android.support.v7.widget.SearchView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -30,8 +29,12 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import entities.Contact;
-//import entities.Group;
 
+/**
+ * Opens up the Map and draws the current user and contacts
+ * @author albertw
+ *
+ */
 public class MapActivity extends ActionBarActivity {
 	
 	private static final LatLng CMU = new LatLng(40.4429, -79.9425);
@@ -42,7 +45,6 @@ public class MapActivity extends ActionBarActivity {
     private ArrayList<Marker> markerList;
     private ArrayList<LatLng> latlngList;
     private ArrayList<Contact> contactList;
-    //private ArrayList<Group> groupList;
     private DBHelper dbHelper;
 
     
@@ -87,6 +89,10 @@ public class MapActivity extends ActionBarActivity {
 			}
 			myLocMarker.setPosition(MyLocation);
 			myLocMarker.setSnippet(locationInfo);
+			
+			dbHelper.updateMyselfLocation(latitude, longitude);
+			//pushMyself();
+			
 
 	        //map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
 	        
@@ -108,6 +114,9 @@ public class MapActivity extends ActionBarActivity {
 		}
 	}
 	
+	/**
+	 * Draws all contacts
+	 */
 	public void showLocations () {
 		if (markerList == null) {
 			markerList = new ArrayList<Marker>();
@@ -116,25 +125,10 @@ public class MapActivity extends ActionBarActivity {
 			latlngList = new ArrayList<LatLng>();
 		}
 		
-		
-		/*groupList = dbHelper.getAllGroups();
-		
-		Iterator it1 = groupList.iterator();
-		while(it1.hasNext()) {
-			contactList = dbHelper.getContactByGroup(((Group)it1.next()).getGroupName());
-			Iterator it2 = contactList.iterator();
-			while(it2.hasNext()){
-				Contact contact = (Contact)it2.next();
-				//latlngList.add(new LatLng(contact.getLatitude(), contact.getLongitude()));
-				markerList.add(map.addMarker(new MarkerOptions().position(new LatLng(contact.getLatitude(), contact.getLongitude())).title(contact.getName()).snippet(contact.getGroup()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))));
-			}
-		}*/
-		
 		contactList = dbHelper.getAllContacts();
 		Iterator<Contact> it2 = contactList.iterator();
 		while(it2.hasNext()){
 			Contact contact = (Contact)it2.next();
-			//latlngList.add(new LatLng(contact.getLatitude(), contact.getLongitude()));
 			markerList.add(map.addMarker(new MarkerOptions().position(new LatLng(contact.getLatitude(), contact.getLongitude())).title(contact.getName()).snippet(contact.getGroup()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))));
 		}
 		
@@ -143,11 +137,14 @@ public class MapActivity extends ActionBarActivity {
 		
 	}
 	
+	/**
+	 * Pulls all the contacts from the server
+	 */
 	public void PullAllContacts(){
 		ClientToServerComm c = ClientToServerComm.getInstance(this); 
 		Thread t = new Thread(c); 
 		t.start(); 
-		try { t.sleep(3000); } 
+		try { Thread.sleep(3000); } 
 		catch (InterruptedException e) 
 		{ // TODO Auto-generated catch block 
 			e.printStackTrace(); 
@@ -156,6 +153,42 @@ public class MapActivity extends ActionBarActivity {
 			c.pullAll();
 			c.terminate();
 	}
+	
+	/**
+	 * Pulls all the messages from the server
+	 */
+	public void PullMessage(){
+		ClientToServerComm c = ClientToServerComm.getInstance(this); 
+		Thread t = new Thread(c); 
+		t.start(); 
+		try { Thread.sleep(3000); } 
+		catch (InterruptedException e) 
+		{ // TODO Auto-generated catch block 
+			e.printStackTrace(); 
+		} 
+		
+		c.pullMessage();
+		c.terminate();
+	}
+	
+	/**
+	 * Pushes user's information to the server
+	 */
+	public void pushMyself(){
+		ClientToServerComm c = ClientToServerComm.getInstance(this); 
+		Thread t = new Thread(c); 
+		t.start(); 
+		try { Thread.sleep(3000); } 
+		catch (InterruptedException e) 
+		{ // TODO Auto-generated catch block 
+			e.printStackTrace(); 
+		} 
+			c.pushMyself();
+		
+			// c.pullAll();
+			c.terminate();
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -187,40 +220,35 @@ public class MapActivity extends ActionBarActivity {
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
-	    switch (item.getItemId()) {
-	    	case R.id.action_show_loc:
-	    		// do something with statusSwitch
-	    		statusSwitch();
-	    		Toast.makeText(getBaseContext(), "Start sharing your location", Toast.LENGTH_SHORT)
-                .show();
-	    		return true;
-	        /*case R.id.action_settings:
-	        	Intent intentSetting = new Intent(this, SettingActivity.class);
-	        	startActivity(intentSetting);
-	            return true;*/
-	        /*case R.id.action_message:
-	        	Intent intentMessage = new Intent(this, MessageActivity.class);
-	        	startActivity(intentMessage);
-	        	return true;*/
-	        case R.id.action_hide_loc:
-	        	/*Intent intentCheckIn = new Intent(this, CheckinActivity.class);
-	        	startActivity(intentCheckIn);*/
-	        	Toast.makeText(getBaseContext(), "Your location is invisible now", Toast.LENGTH_SHORT)
-                .show();
-	        	return true;
-	        case R.id.action_contact:
-	        	Intent intentContact = new Intent(this, ContactActivity.class);
-	        	intentContact.putExtra("mylatitude", MyLocation.latitude);
-	        	intentContact.putExtra("mylongitude", MyLocation.longitude);
-	        	startActivity(intentContact);
-	        	return true;
-	        case R.id.action_refresh:
-	        	PullAllContacts();
-	        	Toast.makeText(getBaseContext(), "Data updated", Toast.LENGTH_SHORT)
-                .show();
-	        	return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
+		if(item.getItemId() == R.id.action_share){
+    		pushMyself();
+    		Toast.makeText(getBaseContext(), "Your location is shared", Toast.LENGTH_SHORT)
+            .show();
+    		return true;
+		}
+		else if(item.getItemId() ==  R.id.action_message){
+        	PullMessage();
+        	Toast.makeText(getBaseContext(), "Your messages are up-to-date now", Toast.LENGTH_SHORT)
+            .show();
+        	return true;
+		}
+		else if(item.getItemId() == R.id.action_contact){
+        	Intent intentContact = new Intent(this, ContactActivity.class);
+        	intentContact.putExtra("mylatitude", MyLocation.latitude);
+        	intentContact.putExtra("mylongitude", MyLocation.longitude);
+        	startActivity(intentContact);
+        	return true;
+		}
+		else if(item.getItemId() == R.id.action_refresh){
+        	PullAllContacts();
+        	Toast.makeText(getBaseContext(), "Data updated", Toast.LENGTH_SHORT)
+            .show();
+        	Intent intentMap = new Intent(this, MapActivity.class);
+        	startActivity(intentMap);
+        	return true;
+		}
+		else{
+			return super.onOptionsItemSelected(item);
+		}
 	}
 }

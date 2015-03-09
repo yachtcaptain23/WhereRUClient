@@ -8,6 +8,11 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * Creates a new contact
+ * @author albertw
+ *
+ */
 public class NewContactActivity extends Activity {
 
 	@Override
@@ -18,6 +23,7 @@ public class NewContactActivity extends Activity {
 		
 	}
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -25,6 +31,10 @@ public class NewContactActivity extends Activity {
 		return true;
 	}
 	
+	/**
+	 * Adds a contact to the database
+	 * @param view current view
+	 */
 	public void addContact(View view){
     	EditText text1 = (EditText) findViewById(R.id.editText1);
     	String name = text1.getText().toString();

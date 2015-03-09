@@ -64,5 +64,9 @@
     <string name="title_activity_group">Group</string>
     <string name="action_refresh">Refresh</string>
     <string name="contactview">CONTACTVIEW</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_group_message">Checkin</string>
+    <string name="action_share">Share your location</string>
+    <string name="action_message">Fetch your messages</string>
 
 </resources>

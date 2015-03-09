@@ -1,5 +1,10 @@
 package entities;
 
+/**
+ * Generic group object
+ * @author albertw
+ *
+ */
 public class Group {
 	
 	private String group_name;

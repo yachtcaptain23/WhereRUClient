@@ -11,6 +11,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * Interfaces with the entire program to store user information
+ * and contact information
+ * Activities and client-server handlers perform actions via
+ * DBHelper objects
+ * @author albertw
+ *
+ */
+
 public class DBHelper extends SQLiteOpenHelper{
 	// Database Version
 	protected static final int DATABASE_VERSION = 3;
@@ -30,6 +39,9 @@ public class DBHelper extends SQLiteOpenHelper{
     
     protected static final String MYSELF_TABLE_NAME = "myself";
     
+    protected static final String USERS_TABLE_NAME = "users";
+    protected static final String COLUMN_PASSWORD = "password";
+    
     // Constructor
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -43,12 +55,14 @@ public class DBHelper extends SQLiteOpenHelper{
 		        + COLUMN_MESSAGE + " TEXT, " + COLUMN_SHARE + " BOOLEAN)");
 		
 		db.execSQL("CREATE TABLE " + MYSELF_TABLE_NAME + "( "  
-		        + COLUMN_NAME + " TEXT, " + COLUMN_GROUP + " TEXT, "
+		        + COLUMN_NAME + " TEXT, "
 		        + COLUMN_LATITUDE + " REAL, " + COLUMN_LONGITUDE + " REAL, "
-		        + COLUMN_MESSAGE + " TEXT, " + COLUMN_SHARE + " BOOLEAN)");
+		        + COLUMN_SHARE + " BOOLEAN, "
+		        + COLUMN_PASSWORD +	" TEXT)");
 		
 		db.execSQL("CREATE TABLE " + GROUP_TABLE_NAME + "( "  
 		        + COLUMN_GROUPNAME +  " TEXT )");
+		
 	}
 
 	@Override
@@ -90,6 +104,7 @@ public class DBHelper extends SQLiteOpenHelper{
 	
 	/**
 	 * Returns a the myself row
+	 * Contains name, long, lat, share, password
 	 * @return MYSELF row
 	 */
 	public String readMyself(){
@@ -101,41 +116,12 @@ public class DBHelper extends SQLiteOpenHelper{
 		s = s + "," +  c.getString(1);
 		s = s + "," +  c.getString(2);
 		s = s + "," +  c.getString(3);
-		s = s + "," +  c.getString(4);
-		s = s + "," +  c.getString(5);
+		//s = s + "," +  c.getString(4);
+		//s = s + "," +  c.getString(5);
 		db.close();
 		return s;
 	}
 	
-	/**
-	 * Gets the group from current
-	 * @return MYSELF row
-	 */
-	public String readMyselfGroup(){
-		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor c = db.rawQuery("SELECT * FROM MYSELF", null); // Returns a cursor on a table
-		if(!c.moveToFirst())
-			System.out.println("Apparently the set is empty??");
-		db.close();
-		return c.getString(1);
-	}
-	
-	/**
-	 * Instantiates current MYSELF table
-	 * @return
-	 */
-	public void instantiateMyself(String name){
-		SQLiteDatabase db = this.getWritableDatabase();
-		db.execSQL("delete from MYSELF;"); //clears the table
-    	db.execSQL("INSERT INTO MYSELF VALUES(\"" + name + "\",\"\",0,0,\"\",1);");
-    	db.close();
-	}
-	
-	public void setMyselfGroup(String name){
-		SQLiteDatabase db = this.getWritableDatabase();
-    	db.execSQL("UPDATE MYSELF SET groupname = \"" + name + "\";");
-    	db.close();
-	}
 	
 	/**
 	 * Updates the location of the MYSELF table
@@ -153,34 +139,56 @@ public class DBHelper extends SQLiteOpenHelper{
 	}
 	
 	/**
-	 * Updates the message of the MYSELF table
-	 * @param message
+	 * Updates the contact within the database
+	 * @param name name of the contact
+	 * @param Latitude latitude stored as a double
+	 * @param Longitude longitutde stored as a double
+	 * @param share boolean value as to whether or not to share with the server
 	 */
-	public void updateMyselfMessage(String message){
+	public void updateContact(String name, double Latitude, double Longitude, int share){
 		SQLiteDatabase db = this.getWritableDatabase();
-    	ContentValues values = new ContentValues();
-    	values.put(COLUMN_MESSAGE, message);
-    	db.close();
-	}
-	
-	public void insertContact(String name, String groupname, 
-			double Latitude, double Longitude, String message, int share){
-		SQLiteDatabase db = this.getWritableDatabase();
-		db.execSQL("delete from CONTACT where NAME="+"\"" + name + "\";");
-		db.execSQL("INSERT INTO CONTACT VALUES(\"" + name 
-				+ "\",\"" + groupname + "\","
-				+ Latitude + "," + Longitude
-				+ ",\"" + message + "\","
-				+ share + ");");
+		
+		ContentValues values = new ContentValues();
+    	
+		values.put(DBHelper.COLUMN_LATITUDE, Latitude);
+		values.put(DBHelper.COLUMN_LONGITUDE, Longitude);
+		values.put(DBHelper.COLUMN_SHARE, share);
+		
+		db.update(DBHelper.CONTACT_TABLE_NAME, values, DBHelper.COLUMN_NAME + "=?", new String[] {name});
 		db.close();
 	}
 	
+	/**
+	 * Updates the messages with the MESSAGE table
+	 * @param name name of the sender
+	 * @param msg message to the recipient
+	 */
+	public void updateMessage(String name, String msg){
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+    	
+		
+		values.put(DBHelper.COLUMN_MESSAGE, msg);
+		
+		db.update(DBHelper.CONTACT_TABLE_NAME, values, DBHelper.COLUMN_NAME + "=?", new String[] {name});
+		db.close();
+	}
+	
+	/**
+	 * Deletes the contact from the MYSELF database
+	 * @param name name of the contact
+	 */
 	public void deleteContact(String name){
 		SQLiteDatabase db = this.getWritableDatabase();
 		db.execSQL("delete from MYSELF where name=\""+name+"\";");
 		db.close();
 	}
 	
+	/**
+	 * Creates a group with the group name
+	 * @param group_name group name
+	 */
 	public void createGroup(String group_name){
 		/* 
 		 * Create a new entry in group database using the information
@@ -195,6 +203,10 @@ public class DBHelper extends SQLiteOpenHelper{
 		db.close();
 	}
 	
+	/**
+	 * Returns an ArrayList of all the groups
+	 * @return 
+	 */
 	public ArrayList<Group> getAllGroups(){
 		ArrayList<Group> groups = new ArrayList<Group>();
 		SQLiteDatabase db = this.getReadableDatabase();
@@ -215,6 +227,10 @@ public class DBHelper extends SQLiteOpenHelper{
 	    return groups;
 	}
 	
+	/**
+	 * Returns an ArrayList of Contacts
+	 * @return
+	 */
 	public ArrayList<Contact> getAllContacts(){
 		
 		ArrayList<Contact> contacts = new ArrayList<Contact>();
@@ -241,6 +257,11 @@ public class DBHelper extends SQLiteOpenHelper{
 	    return contacts;
 	}
 	
+	/**
+	 * Returns all Contacts with the group name
+	 * @param groupname group name
+	 * @return ArrayList of Contacts that belong to the specified group
+	 */
 	public ArrayList<Contact> getContactByGroup(String groupname){
 		
 		ArrayList<Contact> contacts = new ArrayList<Contact>();
@@ -267,10 +288,45 @@ public class DBHelper extends SQLiteOpenHelper{
 	    return contacts;
 	}
 	
+	/**
+	 * Converts an integer value to its corresponding boolean
+	 * @param arg 1 or 0
+	 * @return true or false
+	 */
 	public Boolean int_to_boolean(int arg){
 		if (arg == 1)
 			return true;
 		else return false;
+	}
+	
+	/**
+	 * Replaces instantiateMyself()
+	 * @param name
+	 * @param password
+	 */
+	public void createUser(String name, String password){
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL("delete from MYSELF;"); //clears the table
+    	db.execSQL("INSERT INTO MYSELF VALUES(\"" + name + "\",0,0,1,\""+ password + "\");");
+    	db.close();
+	}
+	
+	/**
+	 * Gets the password from the database
+	 * @param name
+	 * @return
+	 */
+	public String getPassword(String name){
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor c = db.rawQuery("SELECT * FROM MYSELF", null); // Returns a cursor on a table
+		if(!c.moveToFirst()){
+			System.out.println("Apparently the set is empty??");
+			return "itsfridayfridaygottagetdownonfriday";
+		}
+		String s = c.getString(4);
+		db.close();
+		return s;
 	}
 	
 }

@@ -8,6 +8,11 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * Adds the current group activity to the database
+ * @author albertw
+ *
+ */
 public class NewGroupActivity extends Activity {
 
 	@Override
@@ -25,6 +30,10 @@ public class NewGroupActivity extends Activity {
 		return true;
 	}
 	
+	/**
+	 * Adds groups to the database
+	 * @param view current view
+	 */
 	public void addGroup(View view){
     	EditText text1 = (EditText) findViewById(R.id.editText1);
     	String group_name = text1.getText().toString();

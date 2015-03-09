@@ -1,5 +1,11 @@
 package entities;
 
+/**
+ * Message object
+ * Includes content, sender, and receiver
+ * @author albertw
+ *
+ */
 public class Message {
 	
 	private String content;
